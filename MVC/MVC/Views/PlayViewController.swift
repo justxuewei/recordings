@@ -8,6 +8,22 @@
 
 import UIKit
 
-class PlayViewController: NSObject {
+class PlayViewController: UIViewController {
 
+    /**
+     the second way to get the model in a controller:
+     model(changed) -> controller -> view
+     controller hold the Recording(model) and set nil as default
+     once the model is set to a specific object controller will update view via updateForChangedRecording()
+     */
+    var recording: Recording? {
+        didSet {
+            updateForChangedRecording()
+        }
+    }
+    
+    func updateForChangedRecording() {
+        // do something
+    }
+    
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2528DC5323BC898100B7B44C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2528DC5223BC898100B7B44C /* Item.swift */; };
 		25AF960C23B5B23C00D5747B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AF960B23B5B23C00D5747B /* AppDelegate.swift */; };
 		25AF960E23B5B23C00D5747B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AF960D23B5B23C00D5747B /* SceneDelegate.swift */; };
 		25AF961023B5B23C00D5747B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AF960F23B5B23C00D5747B /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2528DC5223BC898100B7B44C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		25AF960823B5B23C00D5747B /* MVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25AF960B23B5B23C00D5747B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25AF960D23B5B23C00D5747B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				25AF963D23B5B2B400D5747B /* Recording.swift */,
 				25AF964323B5B5DE00D5747B /* Folder.swift */,
 				25AF964523B5B60200D5747B /* Store.swift */,
+				2528DC5223BC898100B7B44C /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25AF961023B5B23C00D5747B /* ViewController.swift in Sources */,
+				2528DC5323BC898100B7B44C /* Item.swift in Sources */,
 				25AF964023B5B2E300D5747B /* PlayViewController.swift in Sources */,
 				25AF964223B5B5B000D5747B /* FolderViewController.swift in Sources */,
 				25AF964623B5B60200D5747B /* Store.swift in Sources */,
