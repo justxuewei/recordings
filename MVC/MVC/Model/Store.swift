@@ -15,12 +15,24 @@ final class Store {
     // make Store become a singleton and set root path as default
     static let shared = Store(url: documentDirectory)
     
-    let baseURL: URL?;
+    let baseURL: URL?
+    var placeholder: URL?
     // "private(set)" makes rootFolder having setter privately only, for more info please refer to [this post](https://bit.ly/36hmFyL)
     private(set) var rootFolder: Folder;
     
     init(url: URL?) {
-        // do something...
+        self.baseURL = url
+        self.placeholder = nil
+        
+        if let u = url,
+            let data = try? Data(contentsOf: u.appendingPathComponent(.storeLocation)),
+            let folder = try? JSONDecoder().decode(Folder.self, from: data) {
+            self.rootFolder = folder
+        } else {
+            self.rootFolder = Folder(name: "", uuid: UUID())
+        }
+        
+        self.rootFolder.store = self
     }
     
     func save(_ notifying: Item, userInfo: [AnyHashable: Any]) {
@@ -31,6 +43,10 @@ final class Store {
             // error handling omitted
         }
         NotificationCenter.default.post(name: Store.changedNotification, object: notifying, userInfo: userInfo)
+    }
+    
+    func item(atUUIDPath path: [UUID]) -> Item? {
+        return rootFolder.item(atUUIDPath: path[0...])
     }
     
 }

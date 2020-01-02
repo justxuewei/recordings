@@ -116,8 +116,8 @@
 				25AF960D23B5B23C00D5747B /* SceneDelegate.swift */,
 				25AF960F23B5B23C00D5747B /* ViewController.swift */,
 				25AF961123B5B23C00D5747B /* Main.storyboard */,
-				25AF961423B5B23D00D5747B /* Assets.xcassets */,
 				25AF961623B5B23D00D5747B /* LaunchScreen.storyboard */,
+				25AF961423B5B23D00D5747B /* Assets.xcassets */,
 				25AF961923B5B23D00D5747B /* Info.plist */,
 			);
 			path = MVC;

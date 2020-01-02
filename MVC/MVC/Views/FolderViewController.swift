@@ -42,6 +42,25 @@ class FolderViewController: UITableViewController {
             }
         }
     }
+    
+    // MARK: UIStateRestoring
+    
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        coder.encode(folder.uuidPath, forKey: .uuidPathKey)
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+        if let uuidPath = coder.decodeObject(forKey: .uuidPathKey) as? [UUID],
+            let folder = Store.shared.item(atUUIDPath: uuidPath) as? Folder {
+            self.folder = folder
+        } else {
+            if let index = navigationController?.viewControllers.firstIndex(of: self), index != 0 {
+                navigationController?.viewControllers.remove(at: index)
+            }
+        }
+    }
 
 }
 

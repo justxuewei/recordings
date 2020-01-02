@@ -32,6 +32,20 @@ class Item: NSObject {
             store?.save(self, userInfo: [Item.changeReasonKey: Item.renamed, Item.oldValueKey: oldIndex, Item.newValueKey: newIndex, Item.parentFolderKey: p])
         }
     }
+    
+    var uuidPath: [UUID] {
+        // ?? is nil-coalescing operation which unwraps the left-hand side
+        // if it has a value or returns the right-hand side as a default
+        var path = parent?.uuidPath ?? []
+        path.append(uuid)
+        return path
+    }
+    
+    // test whether first element of ArraySlice matchs with uuid in this object, if so return self
+    func item(atUUIDPath path: ArraySlice<UUID>) -> Item? {
+        guard let first = path.first, first == uuid else { return nil }
+        return self
+    }
 
 }
 
