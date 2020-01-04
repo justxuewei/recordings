@@ -10,6 +10,15 @@ import Foundation
 
 class Recording: Item, Codable {
     
+    var fileURL: URL? {
+        return store?.fileURL(for: self)
+    }
+    
+    override func deleted() {
+        store?.removeFile(for: self)
+        super.deleted()
+    }
+    
     enum RecordingKeys: CodingKey { case name, uuid }
     
     required init(from decoder: Decoder) throws {

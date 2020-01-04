@@ -13,6 +13,7 @@ class Folder: Item, Codable {
     private(set) var contents: [Item]
     override weak var store: Store? {
         didSet {
+            // recursively notify all the sub-folders of the store
             contents.forEach { $0.store = store }
         }
     }
@@ -23,12 +24,14 @@ class Folder: Item, Codable {
     }
     
     enum FolderKeys: CodingKey { case name, uuid, contents }
-    enum FolderOrRecording: CodingKey { case folder, recording }
+    enum FolderOrRecording: CodingKey { case folder, recording } // there are two types of file when serializing: sub-folder and recording file
     
+    // for decoding
     required init(from decoder: Decoder) throws {
+        // keys: name, uuid, contents(nested container)
         let c = try decoder.container(keyedBy: FolderKeys.self)
-        contents = [Item]()
-        var nested = try c.nestedUnkeyedContainer(forKey: .contents)
+        contents = [Item]() // contents initialization
+        var nested = try c.nestedUnkeyedContainer(forKey: .contents) // get the nested unkeyed container, that is, get the sub-folders in current folder
         while true {
             let wrapper = try nested.nestedContainer(keyedBy: FolderOrRecording.self)
             if let f = try wrapper.decodeIfPresent(Folder.self, forKey: .folder) {
@@ -49,6 +52,19 @@ class Folder: Item, Codable {
         }
     }
     
+    /**
+     for encoding
+     the sturcture of this class with this encoder in JSON format will be:
+     {
+        "name": "xxx",
+        "uuid": "xxxx",
+        "contents": [
+            "folder": "xxxxxx",
+            "recording": "xxxxxxxx",
+            ...
+        ]
+     }
+     */
     func encode(to encoder: Encoder) throws {
         var c = encoder.container(keyedBy: FolderKeys.self)
         try c.encode(name, forKey: .name)
@@ -62,7 +78,31 @@ class Folder: Item, Codable {
             default: break
             }
         }
+        // This is for the situation that contents is empty
         _ = nested.nestedContainer(keyedBy: FolderOrRecording.self)
+    }
+    
+    override func deleted() {
+        for item in contents {
+            remove(item)
+        }
+        super.deleted()
+    }
+    
+    // add a sub-folder in current folder
+    func add(_ item: Item) {
+        // prevent from duplicated folder name
+        assert(contents.contains { $0 === item } == false)
+        contents.append(item)
+        contents.sort(by: { $0.name < $1.name })
+        let newIndex = contents.firstIndex(where: { $0 === item })!
+        item.parent = self
+        // notify controller
+        store?.save(item, userInfo: [
+            Item.changeReasonKey: Item.added,
+            Item.newValueKey: newIndex,
+            Item.parentFolderKey: self
+        ])
     }
     
     func reSort(changedItem: Item) -> (oldIndex: Int, newIndex: Int) {
@@ -70,6 +110,17 @@ class Folder: Item, Codable {
         contents.sort { $0.name < $1.name }
         let newIndex = contents.firstIndex { $0 === changedItem }!
         return (oldIndex, newIndex)
+    }
+    
+    func remove(_ item: Item) {
+        guard let index = contents.firstIndex(where: { $0 === item }) else { return }
+        item.deleted()
+        contents.remove(at: index)
+        store?.save(item, userInfo: [
+            Item.changeReasonKey: Item.removed,
+            Item.newValueKey: index,
+            Item.parentFolderKey: self
+        ])
     }
     
     override func item(atUUIDPath path: ArraySlice<UUID>) -> Item? {

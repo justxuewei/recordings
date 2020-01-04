@@ -27,6 +27,10 @@ class FolderViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // make editButtonItem show in the left navigation bar
+        navigationItem.leftItemsSupplementBackButton = true
+        navigationItem.leftBarButtonItem = editButtonItem
 
         NotificationCenter.default.addObserver(self, selector: #selector(handleChangeNotification(_:)), name: Store.changedNotification, object: nil)
     }

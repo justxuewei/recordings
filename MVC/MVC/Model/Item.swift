@@ -33,6 +33,10 @@ class Item: NSObject {
         }
     }
     
+    func deleted() {
+        parent = nil
+    }
+
     var uuidPath: [UUID] {
         // ?? is nil-coalescing operation which unwraps the left-hand side
         // if it has a value or returns the right-hand side as a default
