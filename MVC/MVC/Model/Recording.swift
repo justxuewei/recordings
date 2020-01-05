@@ -10,6 +10,10 @@ import Foundation
 
 class Recording: Item, Codable {
     
+    override init(name: String, uuid: UUID) {
+        super.init(name: name, uuid: uuid)
+    }
+    
     var fileURL: URL? {
         return store?.fileURL(for: self)
     }

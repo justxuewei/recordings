@@ -21,6 +21,10 @@
 		25AF964223B5B5B000D5747B /* FolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AF964123B5B5B000D5747B /* FolderViewController.swift */; };
 		25AF964423B5B5DE00D5747B /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AF964323B5B5DE00D5747B /* Folder.swift */; };
 		25AF964623B5B60200D5747B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AF964523B5B60200D5747B /* Store.swift */; };
+		25D75EE223C1C99D00D23AE9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D75EE123C1C99D00D23AE9 /* Player.swift */; };
+		25D75EE423C1D40100D23AE9 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D75EE323C1D40100D23AE9 /* Recorder.swift */; };
+		25D75EE623C1D79700D23AE9 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D75EE523C1D79700D23AE9 /* Utilities.swift */; };
+		25D75EE823C1E8F500D23AE9 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D75EE723C1E8F500D23AE9 /* RecordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,10 @@
 		25AF964123B5B5B000D5747B /* FolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewController.swift; sourceTree = "<group>"; };
 		25AF964323B5B5DE00D5747B /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		25AF964523B5B60200D5747B /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		25D75EE123C1C99D00D23AE9 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		25D75EE323C1D40100D23AE9 /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
+		25D75EE523C1D79700D23AE9 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		25D75EE723C1E8F500D23AE9 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,7 @@
 		25AF960A23B5B23C00D5747B /* MVC */ = {
 			isa = PBXGroup;
 			children = (
+				25D75EE023C1C98400D23AE9 /* Helpers */,
 				25AF963B23B5B25A00D5747B /* Views */,
 				25AF963C23B5B26200D5747B /* Model */,
 				25AF960D23B5B23C00D5747B /* SceneDelegate.swift */,
@@ -147,6 +156,7 @@
 				25AF960B23B5B23C00D5747B /* AppDelegate.swift */,
 				25AF963F23B5B2E300D5747B /* PlayViewController.swift */,
 				25AF964123B5B5B000D5747B /* FolderViewController.swift */,
+				25D75EE723C1E8F500D23AE9 /* RecordViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,6 +170,16 @@
 				2528DC5223BC898100B7B44C /* Item.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		25D75EE023C1C98400D23AE9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				25D75EE123C1C99D00D23AE9 /* Player.swift */,
+				25D75EE323C1D40100D23AE9 /* Recorder.swift */,
+				25D75EE523C1D79700D23AE9 /* Utilities.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,11 +316,15 @@
 				25AF961023B5B23C00D5747B /* ViewController.swift in Sources */,
 				2528DC5323BC898100B7B44C /* Item.swift in Sources */,
 				25AF964023B5B2E300D5747B /* PlayViewController.swift in Sources */,
+				25D75EE423C1D40100D23AE9 /* Recorder.swift in Sources */,
 				25AF964223B5B5B000D5747B /* FolderViewController.swift in Sources */,
 				25AF964623B5B60200D5747B /* Store.swift in Sources */,
+				25D75EE623C1D79700D23AE9 /* Utilities.swift in Sources */,
 				25AF960C23B5B23C00D5747B /* AppDelegate.swift in Sources */,
 				25AF960E23B5B23C00D5747B /* SceneDelegate.swift in Sources */,
 				25AF963E23B5B2B400D5747B /* Recording.swift in Sources */,
+				25D75EE823C1E8F500D23AE9 /* RecordViewController.swift in Sources */,
+				25D75EE223C1C99D00D23AE9 /* Player.swift in Sources */,
 				25AF964423B5B5DE00D5747B /* Folder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

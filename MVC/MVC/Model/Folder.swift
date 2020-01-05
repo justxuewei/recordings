@@ -112,6 +112,7 @@ class Folder: Item, Codable {
         return (oldIndex, newIndex)
     }
     
+    // remove sub-folder only
     func remove(_ item: Item) {
         guard let index = contents.firstIndex(where: { $0 === item }) else { return }
         item.deleted()

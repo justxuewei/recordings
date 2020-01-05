@@ -36,16 +36,85 @@ class FolderViewController: UITableViewController {
     }
     
     @objc func handleChangeNotification(_ notification: Notification) {
-        // Handle changes to the current folder
+        // Handle changes to the current folder, e.g. current folder was removed
         if let item = notification.object as? Folder, item === folder {
             let reason = notification.userInfo?[Item.changeReasonKey] as? String
             if reason == Item.removed, let nc = navigationController {
+                // back to the parent folder
                 nc.setViewControllers(nc.viewControllers.filter { $0 !== self }, animated: false)
             } else {
+                // question: what is doing here?
                 folder = item
             }
         }
+        
+        // Handle changes to children of the current folder
+        guard let userInfo = notification.userInfo, userInfo[Item.parentFolderKey] as? Folder === folder else {
+            return
+        }
+        
+        // Handle changes to contents
+        if let changeReason = userInfo[Item.changeReasonKey] as? String {
+            // Question: why old value and new value is exchanged from user info
+            let oldValue = userInfo[Item.newValueKey]
+            let newValue = userInfo[Item.oldValueKey]
+            switch (changeReason, newValue, oldValue) {
+            case let (Item.removed, _, (oldIndex as Int)?):
+                tableView.deleteRows(at: [IndexPath(row: oldIndex, section: 0)], with: .right)
+            case let (Item.added, (newIndex as Int)?, _):
+                tableView.insertRows(at: [IndexPath(row: newIndex, section: 0)], with: .left)
+            case let (Item.renamed, (newIndex as Int)?, (oldIndex as Int)?):
+                tableView.moveRow(at: IndexPath(row: oldIndex, section: 0), to: IndexPath(row: newIndex, section: 0))
+                tableView.reloadRows(at: [IndexPath(row: newIndex, section: 0)], with: .fade)
+            default: tableView.reloadData()
+            }
+        } else {
+            tableView.reloadData()
+        }
     }
+    
+    var selectedItem: Item? {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            return folder.contents[indexPath.row]
+        }
+        return nil
+    }
+    
+    // MARK: - Segues and actions
+    
+    @IBAction func createNewFolder(_ sender: Any) {
+        modalTextAlert(title: .createFolder, accept: .create, placeholder: .folderName, callback: { string in
+            if let s = string {
+                let newFolder = Folder(name: s, uuid: UUID())
+                self.folder.add(newFolder)
+            }
+            self.dismiss(animated: true)
+        })
+    }
+    
+    @IBAction func createNewRecording(_ sender: Any) {
+        performSegue(withIdentifier: .showRecorder, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        // go to sub-folder
+        if identifier == .showFolder {
+            guard
+                let folderVC = segue.destination as? FolderViewController,
+                let selectedFolder = selectedItem as? Folder
+            else { fatalError() }
+            folderVC.folder = selectedFolder
+        } else if identifier == .showRecorder {
+            guard let recordVC = segue.destination as? RecordViewController else { fatalError() }
+            recordVC.folder = folder
+        }
+    }
+    
+    // MARK: - Table View
+    
+    
+    
     
     // MARK: UIStateRestoring
     
