@@ -89,7 +89,9 @@ class Folder: Item, Codable {
         super.deleted()
     }
     
-    // add a sub-folder in current folder
+    
+    /// Add a new item in this current folder, e.g. subfolder, recording.
+    /// - Parameter item: A folder or recording object you want to add.
     func add(_ item: Item) {
         // prevent from duplicated folder name
         assert(contents.contains { $0 === item } == false)

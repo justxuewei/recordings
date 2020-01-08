@@ -39,6 +39,9 @@ final class Store {
         self.rootFolder.store = self
     }
     
+    
+    /// Get entire URL of a recording
+    /// - Parameter recording: recording in the current folder
     func fileURL(for recording: Recording) -> URL? {
         return baseURL?.appendingPathComponent(recording.uuid.uuidString + ".m4a") ?? placeholder
     }

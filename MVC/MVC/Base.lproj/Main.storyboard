@@ -81,43 +81,56 @@
             </objects>
             <point key="canvasLocation" x="1928.985507246377" y="-494.19642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Record View Controller-->
         <scene sceneID="yGN-FC-bmh">
             <objects>
-                <viewController id="F5L-TO-2Sm" sceneMemberID="viewController">
+                <viewController id="F5L-TO-2Sm" customClass="RecordViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aS3-v1-d8q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BUN-bj-hma">
-                                <rect key="frame" x="168" y="367.5" width="78" height="107"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BUN-bj-hma">
+                                <rect key="frame" x="16" y="367.5" width="382" height="107"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="734-Ut-oQC">
-                                        <rect key="frame" x="0.0" y="0.0" width="78" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vT1-hJ-15V" userLabel="Time Label">
-                                        <rect key="frame" x="0.0" y="30.5" width="78" height="33.5"/>
+                                        <rect key="frame" x="0.0" y="30.5" width="382" height="33.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ij4-GJ-iLm">
-                                        <rect key="frame" x="0.0" y="74" width="78" height="33"/>
+                                        <rect key="frame" x="0.0" y="74" width="382" height="33"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <state key="normal" title="Stop">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="stop:" destination="F5L-TO-2Sm" eventType="touchUpInside" id="hi4-hr-O8Y"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BUN-bj-hma" firstAttribute="centerX" secondItem="aS3-v1-d8q" secondAttribute="centerX" id="DrF-Ir-HF6"/>
+                            <constraint firstItem="BUN-bj-hma" firstAttribute="leading" secondItem="id9-g3-2Hl" secondAttribute="leading" constant="16" id="GgW-HU-Abl"/>
+                            <constraint firstItem="BUN-bj-hma" firstAttribute="centerY" secondItem="aS3-v1-d8q" secondAttribute="centerY" id="ckj-6n-7My"/>
+                            <constraint firstItem="id9-g3-2Hl" firstAttribute="trailing" secondItem="BUN-bj-hma" secondAttribute="trailing" constant="16" id="u7O-yS-e03"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="id9-g3-2Hl"/>
                     </view>
+                    <connections>
+                        <outlet property="stopButton" destination="ij4-GJ-iLm" id="Y1R-TN-Pch"/>
+                        <outlet property="timeLabel" destination="vT1-hJ-15V" id="cV5-c6-Ia2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ob7-6K-f8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,7 +143,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jN3-j4-Hhm">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.25053444499999999" green="0.56373959780000005" blue="0.8353527784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="5iR-Hs-isT" kind="relationship" relationship="rootViewController" id="uTi-oc-hIv"/>
