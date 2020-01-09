@@ -46,6 +46,7 @@ class Recorder: NSObject, AVAudioRecorderDelegate {
         if let recorder = try? AVAudioRecorder(url: url, settings: settings) {
             recorder.delegate = self
             audioRecorder = recorder
+            recorder.record()
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
                 self.update(self.audioRecorder?.currentTime)
             })

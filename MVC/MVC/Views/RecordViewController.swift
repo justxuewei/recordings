@@ -29,11 +29,11 @@ final class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         // flatMap is to unwrap optional value in this case
         // more infomation you may refer to objccn-functional-swift
         audioRecorder = folder?.store?.fileURL(for: recording).flatMap { url in
-            Recorder(url: url) { time in
+            Recorder(url: url) { [weak self] time in
                 if let t = time {
-                    self.timeLabel.text = timeString(t)
+                    self?.timeLabel.text = timeString(t)
                 } else {
-                    self.dismiss(animated: true)
+                    self?.dismiss(animated: true)
                 }
             }
         }
