@@ -126,11 +126,15 @@ class Folder: Item, Codable {
         ])
     }
     
+    // get file by UUIDPath
     override func item(atUUIDPath path: ArraySlice<UUID>) -> Item? {
+        // return if path.count is 1
         guard path.count > 1 else { return super.item(atUUIDPath: path) }
+        // return if the root path of array of uuid is not current folder
         guard path.first == uuid else { return nil }
         let subsequent = path.dropFirst()
         guard let second = subsequent.first else { return nil }
+        // get sub-folders iteratively
         return contents.first { $0.uuid == second }.flatMap { $0.item(atUUIDPath: subsequent) }
     }
 

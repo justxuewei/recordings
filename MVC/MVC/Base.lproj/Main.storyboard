@@ -215,6 +215,9 @@
                                                         <rect key="frame" x="-2" y="25.333333333333314" width="347" height="31"/>
                                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <color key="thumbTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="setProgress:" destination="8OH-t6-wMl" eventType="valueChanged" id="b4a-QJ-ht5"/>
+                                                        </connections>
                                                     </slider>
                                                 </subviews>
                                             </stackView>
@@ -225,6 +228,9 @@
                                                 <state key="normal" title="Play">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="play:" destination="8OH-t6-wMl" eventType="touchUpInside" id="TAh-Xs-zmb"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
