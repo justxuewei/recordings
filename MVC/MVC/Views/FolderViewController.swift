@@ -105,6 +105,9 @@ class FolderViewController: UITableViewController {
                 let selectedFolder = selectedItem as? Folder
             else { fatalError() }
             folderVC.folder = selectedFolder
+            if let indexPath = tableView.indexPathForSelectedRow {
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
         } else if identifier == .showRecorder {
             guard let recordVC = segue.destination as? RecordViewController else { fatalError() }
             recordVC.folder = folder
@@ -143,6 +146,10 @@ class FolderViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Let parent folder remove it from tableView based on indexPath which user selected.
+        // The code of this line notify model to remove specific folder only, it not, however,
+        // updates the row of tableView immediately, changing view will be performed after
+        // obverser detected the changes on model.
         folder.remove(folder.contents[indexPath.row])
     }
     

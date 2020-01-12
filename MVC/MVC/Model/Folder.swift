@@ -73,6 +73,7 @@ class Folder: Item, Codable {
         for c in contents {
             var wrapper = nested.nestedContainer(keyedBy: FolderOrRecording.self)
             switch c {
+            // recursive encoding folders
             case let f as Folder: try wrapper.encode(f, forKey: .folder)
             case let r as Recording: try wrapper.encode(r, forKey: .recording)
             default: break
@@ -82,6 +83,7 @@ class Folder: Item, Codable {
         _ = nested.nestedContainer(keyedBy: FolderOrRecording.self)
     }
     
+    // recursively sub-item deletion
     override func deleted() {
         for item in contents {
             remove(item)
