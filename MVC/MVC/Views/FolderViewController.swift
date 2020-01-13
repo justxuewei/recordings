@@ -105,9 +105,6 @@ class FolderViewController: UITableViewController {
                 let selectedFolder = selectedItem as? Folder
             else { fatalError() }
             folderVC.folder = selectedFolder
-            if let indexPath = tableView.indexPathForSelectedRow {
-                tableView.deselectRow(at: indexPath, animated: true)
-            }
         } else if identifier == .showRecorder {
             guard let recordVC = segue.destination as? RecordViewController else { fatalError() }
             recordVC.folder = folder

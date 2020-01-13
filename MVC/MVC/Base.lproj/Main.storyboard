@@ -10,7 +10,7 @@
         <!--Recordings-->
         <scene sceneID="agU-Jq-K4C">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="5iR-Hs-isT" customClass="FolderViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="5iR-Hs-isT" customClass="FolderViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gYp-qL-SbC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,7 +158,7 @@
         <!--Details-->
         <scene sceneID="F6z-PD-9Bd">
             <objects>
-                <viewController id="8OH-t6-wMl" customClass="PlayViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="playerController" storyboardIdentifier="playerController" id="8OH-t6-wMl" customClass="PlayViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fK4-fJ-rB0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

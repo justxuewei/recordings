@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25022DA423CC21C100CEAB6E /* FolderViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25022DA323CC21C100CEAB6E /* FolderViewControllerTests.swift */; };
+		25022DAA23CC245900CEAB6E /* empty.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 25022DA923CC245900CEAB6E /* empty.m4a */; };
 		2528DC5323BC898100B7B44C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2528DC5223BC898100B7B44C /* Item.swift */; };
 		25AF960C23B5B23C00D5747B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AF960B23B5B23C00D5747B /* AppDelegate.swift */; };
 		25AF960E23B5B23C00D5747B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AF960D23B5B23C00D5747B /* SceneDelegate.swift */; };
@@ -14,7 +16,6 @@
 		25AF961323B5B23C00D5747B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25AF961123B5B23C00D5747B /* Main.storyboard */; };
 		25AF961523B5B23D00D5747B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25AF961423B5B23D00D5747B /* Assets.xcassets */; };
 		25AF961823B5B23D00D5747B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25AF961623B5B23D00D5747B /* LaunchScreen.storyboard */; };
-		25AF962323B5B23D00D5747B /* MVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AF962223B5B23D00D5747B /* MVCTests.swift */; };
 		25AF962E23B5B23D00D5747B /* MVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AF962D23B5B23D00D5747B /* MVCUITests.swift */; };
 		25AF963E23B5B2B400D5747B /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AF963D23B5B2B400D5747B /* Recording.swift */; };
 		25AF964023B5B2E300D5747B /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AF963F23B5B2E300D5747B /* PlayViewController.swift */; };
@@ -45,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25022DA223CC21C000CEAB6E /* MVCTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MVCTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		25022DA323CC21C100CEAB6E /* FolderViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewControllerTests.swift; sourceTree = "<group>"; };
+		25022DA923CC245900CEAB6E /* empty.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = empty.m4a; sourceTree = "<group>"; };
 		2528DC5223BC898100B7B44C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		25AF960823B5B23C00D5747B /* MVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25AF960B23B5B23C00D5747B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +59,6 @@
 		25AF961723B5B23D00D5747B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25AF961923B5B23D00D5747B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25AF961E23B5B23D00D5747B /* MVCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		25AF962223B5B23D00D5747B /* MVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCTests.swift; sourceTree = "<group>"; };
 		25AF962423B5B23D00D5747B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25AF962923B5B23D00D5747B /* MVCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		25AF962D23B5B23D00D5747B /* MVCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCUITests.swift; sourceTree = "<group>"; };
@@ -135,8 +138,10 @@
 		25AF962123B5B23D00D5747B /* MVCTests */ = {
 			isa = PBXGroup;
 			children = (
-				25AF962223B5B23D00D5747B /* MVCTests.swift */,
+				25022DA923CC245900CEAB6E /* empty.m4a */,
 				25AF962423B5B23D00D5747B /* Info.plist */,
+				25022DA323CC21C100CEAB6E /* FolderViewControllerTests.swift */,
+				25022DA223CC21C000CEAB6E /* MVCTests-Bridging-Header.h */,
 			);
 			path = MVCTests;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 					};
 					25AF961D23B5B23D00D5747B = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 						TestTargetID = 25AF960723B5B23C00D5747B;
 					};
 					25AF962823B5B23D00D5747B = {
@@ -296,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25022DAA23CC245900CEAB6E /* empty.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25AF962323B5B23D00D5747B /* MVCTests.swift in Sources */,
+				25022DA423CC21C100CEAB6E /* FolderViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +542,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 756EQYY32S;
 				INFOPLIST_FILE = MVCTests/Info.plist;
@@ -546,6 +554,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = name.nxw.recordings.MVCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MVCTests/MVCTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVC.app/MVC";
@@ -557,6 +567,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 756EQYY32S;
 				INFOPLIST_FILE = MVCTests/Info.plist;
@@ -568,6 +579,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = name.nxw.recordings.MVCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MVCTests/MVCTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVC.app/MVC";

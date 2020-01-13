@@ -119,6 +119,7 @@ class PlayViewController: UIViewController, UITextFieldDelegate, AVAudioPlayerDe
         audioPlayer?.setProgress(TimeInterval(s.value))
     }
     
+    // view -> view controller
     @IBAction func play(_ sender: Any) {
         audioPlayer?.togglePlay()
         updatePlayButton()
