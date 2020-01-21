@@ -21,6 +21,10 @@
 		25767B9D23D48A230024CAD9 /* input.xcfilelist in Resources */ = {isa = PBXBuildFile; fileRef = 25767B9C23D48A230024CAD9 /* input.xcfilelist */; };
 		25767BA023D48AA00024CAD9 /* output.xcfilelist in Resources */ = {isa = PBXBuildFile; fileRef = 25767B9F23D48AA00024CAD9 /* output.xcfilelist */; };
 		25767BA123D48F5E0024CAD9 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25767B8E23D487D30024CAD9 /* Differentiator.framework */; };
+		2586246323D71F3D00500030 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2586246223D71F3D00500030 /* RecordViewController.swift */; };
+		259D62B623D5CC1B00579F9F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D62B523D5CC1B00579F9F /* Utilities.swift */; };
+		259D62B823D5CC2000579F9F /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D62B723D5CC2000579F9F /* Recorder.swift */; };
+		259D62BA23D5CC2300579F9F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D62B923D5CC2300579F9F /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,10 @@
 		25767B9123D487D30024CAD9 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		25767B9C23D48A230024CAD9 /* input.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = input.xcfilelist; sourceTree = "<group>"; };
 		25767B9F23D48AA00024CAD9 /* output.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output.xcfilelist; sourceTree = "<group>"; };
+		2586246223D71F3D00500030 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		259D62B523D5CC1B00579F9F /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		259D62B723D5CC2000579F9F /* Recorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
+		259D62B923D5CC2300579F9F /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,12 +125,13 @@
 		25767B5C23D478580024CAD9 /* MVVM-C */ = {
 			isa = PBXGroup;
 			children = (
-				25767B5D23D478580024CAD9 /* AppDelegate.swift */,
+				259D62A923D5CB3300579F9F /* App+Views */,
+				259D62AC23D5CBB400579F9F /* Model */,
+				259D62AE23D5CBBD00579F9F /* Helpers */,
 				25767B5F23D478580024CAD9 /* SceneDelegate.swift */,
-				25767B6123D478580024CAD9 /* ViewController.swift */,
 				25767B6323D478580024CAD9 /* Main.storyboard */,
-				25767B6623D478580024CAD9 /* Assets.xcassets */,
 				25767B6823D478590024CAD9 /* LaunchScreen.storyboard */,
+				25767B6623D478580024CAD9 /* Assets.xcassets */,
 				25767B6B23D478590024CAD9 /* Info.plist */,
 			);
 			path = "MVVM-C";
@@ -164,6 +173,33 @@
 				25767B9F23D48AA00024CAD9 /* output.xcfilelist */,
 			);
 			name = Carthage;
+			sourceTree = "<group>";
+		};
+		259D62A923D5CB3300579F9F /* App+Views */ = {
+			isa = PBXGroup;
+			children = (
+				25767B5D23D478580024CAD9 /* AppDelegate.swift */,
+				25767B6123D478580024CAD9 /* ViewController.swift */,
+				2586246223D71F3D00500030 /* RecordViewController.swift */,
+			);
+			name = "App+Views";
+			sourceTree = "<group>";
+		};
+		259D62AC23D5CBB400579F9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		259D62AE23D5CBBD00579F9F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				259D62B923D5CC2300579F9F /* Player.swift */,
+				259D62B723D5CC2000579F9F /* Recorder.swift */,
+				259D62B523D5CC1B00579F9F /* Utilities.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,8 +358,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				259D62B823D5CC2000579F9F /* Recorder.swift in Sources */,
 				25767B6223D478580024CAD9 /* ViewController.swift in Sources */,
 				25767B5E23D478580024CAD9 /* AppDelegate.swift in Sources */,
+				2586246323D71F3D00500030 /* RecordViewController.swift in Sources */,
+				259D62B623D5CC1B00579F9F /* Utilities.swift in Sources */,
+				259D62BA23D5CC2300579F9F /* Player.swift in Sources */,
 				25767B6023D478580024CAD9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
