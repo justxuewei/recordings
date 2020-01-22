@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2575657D23D8772800AAD927 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2575657C23D8772800AAD927 /* Store.swift */; };
 		25767B5E23D478580024CAD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25767B5D23D478580024CAD9 /* AppDelegate.swift */; };
 		25767B6023D478580024CAD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25767B5F23D478580024CAD9 /* SceneDelegate.swift */; };
 		25767B6223D478580024CAD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25767B6123D478580024CAD9 /* ViewController.swift */; };
@@ -25,6 +26,9 @@
 		259D62B623D5CC1B00579F9F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D62B523D5CC1B00579F9F /* Utilities.swift */; };
 		259D62B823D5CC2000579F9F /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D62B723D5CC2000579F9F /* Recorder.swift */; };
 		259D62BA23D5CC2300579F9F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D62B923D5CC2300579F9F /* Player.swift */; };
+		D253A13CCEAF8BBAAC28BF2E /* Item+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253AD302638F38A249AD7E3 /* Item+Rx.swift */; };
+		D253A33C80D9722F48BA0D7A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253A6A0238D1E5576190686 /* Item.swift */; };
+		D253AA477F068042B9A6733B /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253A2737B1E489F0E6D483D /* Folder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2575657C23D8772800AAD927 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		25767B5A23D478580024CAD9 /* MVVM-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25767B5D23D478580024CAD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25767B5F23D478580024CAD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +74,9 @@
 		259D62B523D5CC1B00579F9F /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		259D62B723D5CC2000579F9F /* Recorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		259D62B923D5CC2300579F9F /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		D253A2737B1E489F0E6D483D /* Folder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		D253A6A0238D1E5576190686 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		D253AD302638F38A249AD7E3 /* Item+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +196,10 @@
 		259D62AC23D5CBB400579F9F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2575657C23D8772800AAD927 /* Store.swift */,
+				D253A2737B1E489F0E6D483D /* Folder.swift */,
+				D253A6A0238D1E5576190686 /* Item.swift */,
+				D253AD302638F38A249AD7E3 /* Item+Rx.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -361,10 +373,14 @@
 				259D62B823D5CC2000579F9F /* Recorder.swift in Sources */,
 				25767B6223D478580024CAD9 /* ViewController.swift in Sources */,
 				25767B5E23D478580024CAD9 /* AppDelegate.swift in Sources */,
+				2575657D23D8772800AAD927 /* Store.swift in Sources */,
 				2586246323D71F3D00500030 /* RecordViewController.swift in Sources */,
 				259D62B623D5CC1B00579F9F /* Utilities.swift in Sources */,
 				259D62BA23D5CC2300579F9F /* Player.swift in Sources */,
 				25767B6023D478580024CAD9 /* SceneDelegate.swift in Sources */,
+				D253AA477F068042B9A6733B /* Folder.swift in Sources */,
+				D253A33C80D9722F48BA0D7A /* Item.swift in Sources */,
+				D253A13CCEAF8BBAAC28BF2E /* Item+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

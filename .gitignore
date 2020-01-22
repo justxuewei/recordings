@@ -92,3 +92,4 @@ iOSInjectionProject/
 .DS_Store
 MVVM-C/Carthage/Checkouts
 MVVM-C/Carthage/Build
+.idea
