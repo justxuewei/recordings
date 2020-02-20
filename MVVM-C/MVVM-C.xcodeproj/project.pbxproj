@@ -28,6 +28,7 @@
 		259D62BA23D5CC2300579F9F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D62B923D5CC2300579F9F /* Player.swift */; };
 		D253A13CCEAF8BBAAC28BF2E /* Item+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253AD302638F38A249AD7E3 /* Item+Rx.swift */; };
 		D253A33C80D9722F48BA0D7A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253A6A0238D1E5576190686 /* Item.swift */; };
+		D253A901838AC935A25E3B58 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253A8F3643213D05B4F0B1F /* Recording.swift */; };
 		D253AA477F068042B9A6733B /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253A2737B1E489F0E6D483D /* Folder.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		259D62B923D5CC2300579F9F /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		D253A2737B1E489F0E6D483D /* Folder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		D253A6A0238D1E5576190686 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		D253A8F3643213D05B4F0B1F /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		D253AD302638F38A249AD7E3 /* Item+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,6 +202,7 @@
 				D253A2737B1E489F0E6D483D /* Folder.swift */,
 				D253A6A0238D1E5576190686 /* Item.swift */,
 				D253AD302638F38A249AD7E3 /* Item+Rx.swift */,
+				D253A8F3643213D05B4F0B1F /* Recording.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				D253AA477F068042B9A6733B /* Folder.swift in Sources */,
 				D253A33C80D9722F48BA0D7A /* Item.swift in Sources */,
 				D253A13CCEAF8BBAAC28BF2E /* Item+Rx.swift in Sources */,
+				D253A901838AC935A25E3B58 /* Recording.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

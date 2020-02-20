@@ -31,6 +31,14 @@ class Store: NSObject {
             self.rootFolder = Folder(name: "", uuid: UUID())
         }
     }
+    
+    func fileURL(for recording: Recording) -> URL? {
+        return nil
+    }
+    
+    func save(_ notifying: Item, userInfo: [AnyHashable: Any]) {}
+    
+    func removeFile(for recording: Recording) {}
 
 }
 
