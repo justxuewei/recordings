@@ -106,11 +106,13 @@ class Folder: Item, Codable {
   
   override func item(atUUIDPath path: ArraySlice<UUID>) -> Item? {
     // "path.count == 1" means the file is in root folder
-    // so pass it to the super folderQSZwdx123
+    // so pass it to the super folder
     guard path.count > 1 else { return super.item(atUUIDPath: path) }
+    // check the first uuid, return if it not matches
     guard path.first == uuid else { return nil }
     let subsequent = path.dropFirst()
     guard let second = subsequent.first else { return nil }
+    // search next part of path in the contents array
     return contents
       .first { $0.uuid == second }
       .flatMap { $0.item(atUUIDPath: subsequent) }
