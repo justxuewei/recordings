@@ -7,6 +7,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 import RxDataSources
+import Differentiator
 
 class FolderViewModel {
 
@@ -43,7 +44,6 @@ class FolderViewModel {
     }
   }
   
-  // TODO: waiting for learning RxDataSources
   var folderContents: Observable<[AnimatableSectionModel<Int, Item>]> {
     return folderUntilDeleted.map { folder in
       guard let f = folder else { return [AnimatableSectionModel(model: 0, items: [])] }

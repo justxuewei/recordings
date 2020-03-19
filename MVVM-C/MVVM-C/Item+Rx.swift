@@ -6,8 +6,9 @@
 import RxSwift
 import RxCocoa
 import RxDataSources
+import Differentiator
 
-extension Item: Identifiable, Hashable {
+extension Item: IdentifiableType, Hashable {
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(uuid)
@@ -17,6 +18,15 @@ extension Item: Identifiable, Hashable {
         return lhs.uuid == rhs.uuid
     }
     
+    var identity: UUID { return uuid }
+    
+    /**
+     Marked by Xavier:
+     
+     There are two situations that `changeObservable`, an observable for notification, will send a notification:
+     - Current item was removed.
+     - `self` is an instance of `Folder` and its sub-item has been changed.
+     */
     var changeObservable: Observable<()> {
         return NotificationCenter.default.rx.notification(Store.changedNotification).filter { [weak self] (notification: Notification) -> Bool in
             guard let self = self else { return false }
