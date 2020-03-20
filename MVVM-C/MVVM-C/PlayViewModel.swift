@@ -21,11 +21,22 @@ class PlayViewModel {
     private let recordingUntilDeleted: Observable<Recording?>
     
     init() {
+        /**
+         Marked by Xavier:
+         
+         `recording` is nil in very beginning. Then `recordingUntilDeleted` should be a nil stream because you
+         feed a nil to `flatMapLatest`.
+         Once `recording` is not nil, `recordingUntilDeleted` should be:
+         - emit the current recording --> `Observable.just(currentRecording)` completes
+         - re-emit the recording if current recording was changed --> `concat(currentRecording.changeObservable.map { _ in recording })`
+           completes if current recording was deleted
+         - emit a nil to indicated current recording was removed
+         */
         recordingUntilDeleted = recording.asObservable()
-            // every time the folder changes
             .flatMapLatest { (recording: Recording?) -> Observable<Recording?> in
                 guard let currentRecording = recording else { return Observable.just(nil) }
                 return Observable.just(currentRecording)
+                    // Question: Does `recording` have any changes?
                     .concat(currentRecording.changeObservable.map { _ in recording })
                     .takeUntil(currentRecording.deletedObservable)
                     .concat(Observable.just(nil))

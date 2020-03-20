@@ -53,6 +53,8 @@ extension Item {
     static let newValueKey = "newValue"
     static let oldValueKey = "oldValue"
     static let parentFolderKey = "parentFolder"
+    
+    // change reasons
     static let renamed = "renamed"
     static let added = "added"
     static let removed = "removed"

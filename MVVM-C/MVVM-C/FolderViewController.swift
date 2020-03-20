@@ -73,7 +73,7 @@ class FolderViewController: UITableViewController {
             self.viewModel.folder.value = folder
         } else {
             if var controllers = navigationController?.viewControllers,
-                let index = controllers.index(where: { $0 === self }) {
+                let index = controllers.firstIndex(where: { $0 === self }) {
                 controllers.remove(at: index)
                 navigationController?.viewControllers = controllers
             }
