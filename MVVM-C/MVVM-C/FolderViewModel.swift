@@ -11,12 +11,12 @@ import Differentiator
 
 class FolderViewModel {
 
-  // Variable is replaced by Relays which defined in RxCocoa
-  let folder: Variable<Folder>
+  // Variable is replaced by Relays defined in RxCocoa
+  let folder: BehaviorSubject<Folder>
   private let folderUntilDeleted: Observable<Folder?>
   
   init(initialFolder: Folder = Store.shared.rootFolder) {
-    folder = Variable(initialFolder)
+    folder = BehaviorSubject(value: initialFolder)
     folderUntilDeleted = folder.asObservable()
       .flatMapLatest { currentFolder in
         Observable.just(currentFolder)
@@ -30,11 +30,11 @@ class FolderViewModel {
   func create(folderNamed name: String?) {
     guard let name = name else { return }
     let newName = Folder(name: name, uuid: UUID())
-    folder.value.add(newName)
+    try! folder.value().add(newName)
   }
   
   func deleteItem(_ item: Item) {
-    folder.value.remove(item)
+    try! folder.value().remove(item)
   }
   
   var navigationTitle: Observable<String> {

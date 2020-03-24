@@ -13,7 +13,7 @@ import RxDataSources
 
 class PlayViewModel {
     
-    let recording = Variable<Recording?>(nil)
+    let recording = BehaviorSubject<Recording?>(value: nil)
     let playState: Observable<Player.State?>
     let togglePlay = PublishSubject<()>()
     let setProgress = PublishSubject<TimeInterval>()
@@ -73,7 +73,7 @@ class PlayViewModel {
     }
     
     func nameChanged(_ name: String?) {
-        guard let r = recording.value, let text = name else { return }
+        guard let r = try! recording.value(), let text = name else { return }
         r.setName(text)
     }
     
