@@ -30,6 +30,9 @@ class FolderViewController: UITableViewController {
     tableView.rx.modelSelected(Item.self)
         .subscribe(onNext: { [unowned self] in self.delegate?.didSelect($0) })
         .disposed(by: disposeBag)
+    tableView.rx.itemSelected.subscribe(onNext: { [unowned self] in
+        self.tableView.deselectRow(at: $0, animated: true)
+    }).disposed(by: disposeBag)
   }
     
     var dataSource: RxTableViewSectionedAnimatedDataSource<AnimatableSectionModel<Int, Item>> {
@@ -56,21 +59,23 @@ class FolderViewController: UITableViewController {
     }
     
     @IBAction func createNewRecording(_ sender: Any) {
-        delegate?.createRecording(in: try! viewModel.folder.value())
+        let folder = viewModel.folder.value
+        print("method: createNewRecording, folder: \(folder)")
+        delegate?.createRecording(in: folder)
     }
     
     // MARK: UIStateRestoring
     
     override func encodeRestorableState(with coder: NSCoder) {
         super.encodeRestorableState(with: coder)
-        coder.encode((try! viewModel.folder.value()).uuidPath, forKey: .uuidPathKey)
+        coder.encode(viewModel.folder.value.uuidPath, forKey: .uuidPathKey)
     }
     
     override func decodeRestorableState(with coder: NSCoder) {
         super.decodeRestorableState(with: coder)
         if let uuidPath = coder.decodeObject(forKey: .uuidPathKey) as? [UUID],
             let folder = Store.shared.item(atUUIDPath: uuidPath) as? Folder {
-            self.viewModel.folder.onNext(folder)
+            self.viewModel.folder.accept(folder)
         } else {
             if var controllers = navigationController?.viewControllers,
                 let index = controllers.firstIndex(where: { $0 === self }) {

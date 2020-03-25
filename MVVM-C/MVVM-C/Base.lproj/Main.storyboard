@@ -78,7 +78,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ENC-PO-H9b">
             <objects>
-                <navigationController id="019-wB-pqt" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="playerNavigation" storyboardIdentifier="playerNavigationController" id="019-wB-pqt" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PKu-xl-6Ea">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -229,7 +229,7 @@
         <!--Record View Controller-->
         <scene sceneID="eFl-DG-QTE">
             <objects>
-                <viewController id="F2I-OE-Xyj" customClass="RecordViewController" customModule="MVVM_C" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="recorderViewController" id="F2I-OE-Xyj" customClass="RecordViewController" customModule="MVVM_C" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Chp-ev-8mn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

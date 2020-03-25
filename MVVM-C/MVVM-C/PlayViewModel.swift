@@ -13,7 +13,7 @@ import RxDataSources
 
 class PlayViewModel {
     
-    let recording = BehaviorSubject<Recording?>(value: nil)
+    let recording = BehaviorRelay<Recording?>(value: nil)
     let playState: Observable<Player.State?>
     let togglePlay = PublishSubject<()>()
     let setProgress = PublishSubject<TimeInterval>()
@@ -73,7 +73,7 @@ class PlayViewModel {
     }
     
     func nameChanged(_ name: String?) {
-        guard let r = try! recording.value(), let text = name else { return }
+        guard let r = recording.value, let text = name else { return }
         r.setName(text)
     }
     
@@ -87,7 +87,7 @@ class PlayViewModel {
     
     var noRecording: Observable<Bool> {
         // Question: What is the role of `delay(0, scheduler: MainScheduler())`?
-        return hasRecording.map { !$0 }.delay(0, scheduler: MainScheduler())
+        return hasRecording.map { !$0 }.delay(.microseconds(0), scheduler: MainScheduler())
     }
     
     var progress: Observable<TimeInterval?> {
@@ -107,7 +107,7 @@ class PlayViewModel {
     }
     
     var sliderProgress: Observable<Float> {
-        return playState.map { $0.flatMap { Float($0.duration) } ?? 0.0 }
+        return playState.map { $0.flatMap { Float($0.currentTime) } ?? 0.0 }
     }
     
     var isPaused: Observable<Bool> {

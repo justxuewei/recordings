@@ -11,13 +11,17 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var coordinator: Coordinator? = nil
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        let splitViewController = window!.rootViewController as! UISplitViewController
+        splitViewController.delegate = self
+        splitViewController.preferredDisplayMode = .allVisible
+        coordinator = Coordinator(splitViewController)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -48,6 +52,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+}
 
+extension SceneDelegate: UISplitViewControllerDelegate {
+    
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        guard let topAsDetailController = (secondaryViewController as? UINavigationController)?.topViewController as? PlayViewController else {
+            return false
+        }
+        if topAsDetailController.viewModel.recording.value == nil {
+            NSLog("Don't include an empty player in the navigation stack when collapsed")
+            return true
+        }
+        return false
+    }
+    
 }
 

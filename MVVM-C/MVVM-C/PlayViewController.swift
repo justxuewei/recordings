@@ -44,6 +44,8 @@ class PlayViewController: UIViewController, UITextFieldDelegate {
         viewModel.sliderProgress.bind(to: progressSlider.rx.value).disposed(by: disposeBag)
         viewModel.playButtonTitle.bind(to: playButton.rx.title(for: .normal)).disposed(by: disposeBag)
         viewModel.nameText.bind(to: nameTextField.rx.text).disposed(by: disposeBag)
+        
+        viewModel.sliderProgress.debug("sliderProgress", trimOutput: true).subscribe(onNext: { print("\($0)") }).disposed(by: disposeBag)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -70,16 +72,14 @@ class PlayViewController: UIViewController, UITextFieldDelegate {
     
     override func encodeRestorableState(with coder: NSCoder) {
         super.encodeRestorableState(with: coder)
-        // Question: try?
-        guard let recording = try? viewModel.recording.value() else { return }
-        coder.encode(recording.uuidPath, forKey: .uuidPathKey)
+        coder.encode(viewModel.recording.value?.uuidPath, forKey: .uuidPathKey)
     }
     
     override func decodeRestorableState(with coder: NSCoder) {
         super.decodeRestorableState(with: coder)
         if let uuidPath = coder.decodeObject(forKey: .uuidPathKey) as? [UUID],
             let recording = Store.shared.item(atUUIDPath: uuidPath) as? Recording {
-            self.viewModel.recording.onNext(recording)
+            self.viewModel.recording.accept(recording)
         }
     }
     

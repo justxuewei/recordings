@@ -23,9 +23,9 @@ extension Item: IdentifiableType, Hashable {
     /**
      Marked by Xavier:
      
-     There are two situations that `changeObservable`, an observable for notification, will send a notification:
-     - Current item was removed.
-     - `self` is an instance of `Folder` and its sub-item has been changed.
+     There are two situations that `changeObservable`, an observable for notification, will emit a `()`:
+     - Current item was changed except for removal operation.
+     - Current item is an instance of `Folder` and its sub-item has been changed.
      */
     var changeObservable: Observable<()> {
         return NotificationCenter.default.rx.notification(Store.changedNotification).filter { [weak self] (notification: Notification) -> Bool in
@@ -33,7 +33,6 @@ extension Item: IdentifiableType, Hashable {
             if let item = notification.object as? Item,
                item == self,
                !(notification.userInfo?[Item.changeReasonKey] as? String == Item.removed) {
-                // expect for removal operation
                 return true
             } else if let userInfo = notification.userInfo,
                       userInfo[Item.parentFolderKey] as? Folder == self {

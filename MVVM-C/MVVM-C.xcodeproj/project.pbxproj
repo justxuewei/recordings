@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2558EA412429A2810029FFD5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2558EA402429A2810029FFD5 /* Coordinator.swift */; };
+		2558EA43242A2BC80029FFD5 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25767B8E23D487D30024CAD9 /* Differentiator.framework */; };
+		2558EA46242A2BCA0029FFD5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25767B9123D487D30024CAD9 /* RxCocoa.framework */; };
+		2558EA48242A2BCC0029FFD5 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25767B9023D487D30024CAD9 /* RxDataSources.framework */; };
+		2558EA4A242A2BCD0029FFD5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25767B8F23D487D30024CAD9 /* RxSwift.framework */; };
 		256F066C24237957009EE44C /* PlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256F066B24237957009EE44C /* PlayViewModel.swift */; };
 		256F066E2423796B009EE44C /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256F066D2423796B009EE44C /* PlayViewController.swift */; };
 		2575657D23D8772800AAD927 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2575657C23D8772800AAD927 /* Store.swift */; };
@@ -17,13 +22,10 @@
 		25767B6A23D478590024CAD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25767B6823D478590024CAD9 /* LaunchScreen.storyboard */; };
 		25767B7523D478590024CAD9 /* MVVM_CTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25767B7423D478590024CAD9 /* MVVM_CTests.swift */; };
 		25767B8023D478590024CAD9 /* MVVM_CUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25767B7F23D478590024CAD9 /* MVVM_CUITests.swift */; };
-		25767B9423D487D30024CAD9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25767B8F23D487D30024CAD9 /* RxSwift.framework */; };
-		25767B9623D487D30024CAD9 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25767B9023D487D30024CAD9 /* RxDataSources.framework */; };
-		25767B9823D487D30024CAD9 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25767B9123D487D30024CAD9 /* RxCocoa.framework */; };
 		25767B9D23D48A230024CAD9 /* input.xcfilelist in Resources */ = {isa = PBXBuildFile; fileRef = 25767B9C23D48A230024CAD9 /* input.xcfilelist */; };
 		25767BA023D48AA00024CAD9 /* output.xcfilelist in Resources */ = {isa = PBXBuildFile; fileRef = 25767B9F23D48AA00024CAD9 /* output.xcfilelist */; };
-		25767BA123D48F5E0024CAD9 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25767B8E23D487D30024CAD9 /* Differentiator.framework */; };
 		2586246323D71F3D00500030 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2586246223D71F3D00500030 /* RecordViewController.swift */; };
+		2594ACA2242AFFFC0026E042 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2594ACA0242AFFF10026E042 /* RxRelay.framework */; };
 		259D62B623D5CC1B00579F9F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D62B523D5CC1B00579F9F /* Utilities.swift */; };
 		259D62B823D5CC2000579F9F /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D62B723D5CC2000579F9F /* Recorder.swift */; };
 		259D62BA23D5CC2300579F9F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D62B923D5CC2300579F9F /* Player.swift */; };
@@ -54,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2558EA402429A2810029FFD5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		256F066B24237957009EE44C /* PlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewModel.swift; sourceTree = "<group>"; };
 		256F066D2423796B009EE44C /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		2575657C23D8772800AAD927 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 		25767B9C23D48A230024CAD9 /* input.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = input.xcfilelist; sourceTree = "<group>"; };
 		25767B9F23D48AA00024CAD9 /* output.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output.xcfilelist; sourceTree = "<group>"; };
 		2586246223D71F3D00500030 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		2594ACA0242AFFF10026E042 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		259D62B523D5CC1B00579F9F /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		259D62B723D5CC2000579F9F /* Recorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		259D62B923D5CC2300579F9F /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -94,10 +98,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25767B9823D487D30024CAD9 /* RxCocoa.framework in Frameworks */,
-				25767B9623D487D30024CAD9 /* RxDataSources.framework in Frameworks */,
-				25767BA123D48F5E0024CAD9 /* Differentiator.framework in Frameworks */,
-				25767B9423D487D30024CAD9 /* RxSwift.framework in Frameworks */,
+				2558EA4A242A2BCD0029FFD5 /* RxSwift.framework in Frameworks */,
+				2558EA46242A2BCA0029FFD5 /* RxCocoa.framework in Frameworks */,
+				2558EA43242A2BC80029FFD5 /* Differentiator.framework in Frameworks */,
+				2558EA48242A2BCC0029FFD5 /* RxDataSources.framework in Frameworks */,
+				2594ACA2242AFFFC0026E042 /* RxRelay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +131,8 @@
 				25767B7E23D478590024CAD9 /* MVVM-CUITests */,
 				25767B5B23D478580024CAD9 /* Products */,
 				25767B8D23D487D30024CAD9 /* Frameworks */,
-				25767B9E23D48A470024CAD9 /* Carthage */,
+				25767B9C23D48A230024CAD9 /* input.xcfilelist */,
+				25767B9F23D48AA00024CAD9 /* output.xcfilelist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,11 +152,11 @@
 				259D62A923D5CB3300579F9F /* App+Views */,
 				259D62AC23D5CBB400579F9F /* Model */,
 				259D62AE23D5CBBD00579F9F /* Helpers */,
+				25767B6623D478580024CAD9 /* Assets.xcassets */,
 				25767B5F23D478580024CAD9 /* SceneDelegate.swift */,
+				25767B6B23D478590024CAD9 /* Info.plist */,
 				25767B6323D478580024CAD9 /* Main.storyboard */,
 				25767B6823D478590024CAD9 /* LaunchScreen.storyboard */,
-				25767B6623D478580024CAD9 /* Assets.xcassets */,
-				25767B6B23D478590024CAD9 /* Info.plist */,
 			);
 			path = "MVVM-C";
 			sourceTree = "<group>";
@@ -176,6 +182,7 @@
 		25767B8D23D487D30024CAD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2594ACA0242AFFF10026E042 /* RxRelay.framework */,
 				25767B8E23D487D30024CAD9 /* Differentiator.framework */,
 				25767B9123D487D30024CAD9 /* RxCocoa.framework */,
 				25767B9023D487D30024CAD9 /* RxDataSources.framework */,
@@ -184,25 +191,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		25767B9E23D48A470024CAD9 /* Carthage */ = {
-			isa = PBXGroup;
-			children = (
-				25767B9C23D48A230024CAD9 /* input.xcfilelist */,
-				25767B9F23D48AA00024CAD9 /* output.xcfilelist */,
-			);
-			name = Carthage;
-			sourceTree = "<group>";
-		};
 		259D62A923D5CB3300579F9F /* App+Views */ = {
 			isa = PBXGroup;
 			children = (
 				25767B5D23D478580024CAD9 /* AppDelegate.swift */,
-				2586246223D71F3D00500030 /* RecordViewController.swift */,
-				D253AB382CB481E14ACA1A47 /* RecordViewModel.swift */,
+				2558EA402429A2810029FFD5 /* Coordinator.swift */,
 				D253A382B54699292ADE42AC /* FolderViewController.swift */,
 				D253AEE83172513A18E2D407 /* FolderViewModel.swift */,
 				256F066D2423796B009EE44C /* PlayViewController.swift */,
 				256F066B24237957009EE44C /* PlayViewModel.swift */,
+				2586246223D71F3D00500030 /* RecordViewController.swift */,
+				D253AB382CB481E14ACA1A47 /* RecordViewModel.swift */,
 			);
 			name = "App+Views";
 			sourceTree = "<group>";
@@ -365,12 +364,12 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"$(SRCROOT)/input.xcfilelist",
+				input.xcfilelist,
 			);
 			inputPaths = (
 			);
 			outputFileListPaths = (
-				"$(SRCROOT)/output.xcfilelist",
+				output.xcfilelist,
 			);
 			outputPaths = (
 			);
@@ -395,6 +394,7 @@
 				D253AA477F068042B9A6733B /* Folder.swift in Sources */,
 				256F066E2423796B009EE44C /* PlayViewController.swift in Sources */,
 				D253A33C80D9722F48BA0D7A /* Item.swift in Sources */,
+				2558EA412429A2810029FFD5 /* Coordinator.swift in Sources */,
 				D253A13CCEAF8BBAAC28BF2E /* Item+Rx.swift in Sources */,
 				D253A901838AC935A25E3B58 /* Recording.swift in Sources */,
 				D253A8CC24FEB460F66E36A8 /* FolderViewController.swift in Sources */,

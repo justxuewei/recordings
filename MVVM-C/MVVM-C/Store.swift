@@ -38,6 +38,14 @@ class Store {
         return baseURL?.appendingPathComponent(recording.uuid.uuidString + ".m4a") ?? placeholder
     }
     
+    /**
+     `save(_:userInfo:)` is to persist changes in json file and sent a notification to NotificationCenter to inform a change
+     happened.
+     
+     Q: Why is it only encoding `rootFolder`?
+     A: Because both encoding and decoding are recursively. Please refer to `encode(to:)` and `init(from:)` in `Folder.swift`.
+        So, you only need to encode `rootFolder` and rewrite them to json file to save all contents when every change comes.
+     */
     func save(_ notifying: Item, userInfo: [AnyHashable: Any]) {
         if let url = baseURL,
            let data = try? JSONEncoder().encode(rootFolder) {
