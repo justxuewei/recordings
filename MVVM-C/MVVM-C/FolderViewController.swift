@@ -27,10 +27,10 @@ class FolderViewController: UITableViewController {
     tableView.rx.modelDeleted(Item.self)
         .subscribe(onNext: { [unowned self] in self.viewModel.deleteItem($0) })
         .disposed(by: disposeBag)
-    tableView.rx.modelSelected(Item.self)
-        .subscribe(onNext: { [unowned self] in self.delegate?.didSelect($0) })
-        .disposed(by: disposeBag)
     tableView.rx.itemSelected.subscribe(onNext: { [unowned self] in
+        guard let item: Item = try? self.tableView.rx.model(at: $0) else { fatalError() }
+        self.delegate?.didSelect(item)
+        print("didSelect, item: \(item)")
         self.tableView.deselectRow(at: $0, animated: true)
     }).disposed(by: disposeBag)
   }
